@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+
+
+<hibernate-mapping>
+<sql-query name="csjobs.search1">
+        <return class="csjobs.model.Application" />
+<![CDATA[
+select a.* from applications a, job_committee_members j where a.job_id = j.job_id and j.user_id=:revid
+]]>
+    </sql-query>
+    
+     <sql-query name="csjobs.search2">
+        <return class="csjobs.model.Application" />
+<![CDATA[
+select a.* from applications a, job_committee_members j where a.job_id = j.job_id and j.user_id=:revid
+]]>
+    </sql-query>
+    </hibernate-mapping>
